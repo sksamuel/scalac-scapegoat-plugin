@@ -55,6 +55,9 @@ jobs:
       - name: Generate coverage report
         run: sbt clean coverage test coverageReport
       - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
       - name: Run Scalafix check
         run: sbt fixCheck
       - name: Run Scapegoat
