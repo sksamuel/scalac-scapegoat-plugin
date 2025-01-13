@@ -1,6 +1,6 @@
 package com.sksamuel.scapegoat.inspections.option
 
-import com.sksamuel.scapegoat.{InspectionTest, Levels, Warning}
+import com.sksamuel.scapegoat.{InspectionTest, Levels}
 
 class OptionGetTest extends InspectionTest(classOf[OptionGet]) {
 

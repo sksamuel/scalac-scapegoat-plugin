@@ -19,8 +19,8 @@ developers := List(
   )
 )
 
-scalaVersion := "3.5.2"
-crossScalaVersions := Seq("2.12.19", "2.12.20", "2.13.14", "2.13.15", "3.3.4", "3.5.2")
+scalaVersion := "3.6.2"
+crossScalaVersions := Seq("2.12.19", "2.12.20", "2.13.14", "2.13.15", "3.3.4", "3.6.2")
 autoScalaLibrary := false
 crossVersion := CrossVersion.full
 crossTarget := {
@@ -56,7 +56,7 @@ val scalac12Options = scala2Options ++ Seq(
   "254"
 )
 val scala3Options = Seq(
-  "-Ysafe-init",
+  "-Wsafe-init",
   "-Wnonunit-statement",
   "-Wunused:all",
   "-Wvalue-discard",
