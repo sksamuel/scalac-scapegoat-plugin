@@ -17,18 +17,14 @@ class WarningTest extends AnyFreeSpec {
 
   "Warning" - {
     "hasMinimalLevelOf" - {
-      "info >= info" in {
-        assert(warning.hasMinimalLevelOf(Levels.Info) === true)
-      }
-      "info < warning" in {
-        assert(warning.hasMinimalLevelOf(Levels.Warning) === false)
-      }
-      "info < error" in {
-        assert(warning.hasMinimalLevelOf(Levels.Error) === false)
-      }
-      "error > warning" in {
-        assert(warning.copy(level = Levels.Error).hasMinimalLevelOf(Levels.Warning) === true)
-      }
+      "info >= info" in
+      assert(warning.hasMinimalLevelOf(Levels.Info) === true)
+      "info < warning" in
+      assert(warning.hasMinimalLevelOf(Levels.Warning) === false)
+      "info < error" in
+      assert(warning.hasMinimalLevelOf(Levels.Error) === false)
+      "error > warning" in
+      assert(warning.copy(level = Levels.Error).hasMinimalLevelOf(Levels.Warning) === true)
     }
   }
 

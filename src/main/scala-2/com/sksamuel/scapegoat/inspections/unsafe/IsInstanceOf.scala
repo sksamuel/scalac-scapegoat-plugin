@@ -26,8 +26,7 @@ class IsInstanceOf
             tree match {
               case TypeApply(Select(_, TermName("isInstanceOf")), _) =>
                 context.warn(tree.pos, self, tree.toString.take(500))
-              case DefDef(modifiers, _, _, _, _, _)
-                  if modifiers.hasFlag(Flag.SYNTHETIC) => // avoid partial function stuff
+              case DefDef(modifiers, _, _, _, _, _) if modifiers.hasFlag(Flag.SYNTHETIC) => // avoid partial function stuff
               case Match(_, cases) => // ignore selector and process cases
                 cases.foreach(traverse)
               case _ => continue(tree)

@@ -55,17 +55,14 @@ class ComparingUnrelatedTypesTest extends InspectionTest {
         "compared to int literal" in verifyNoWarnings("""object A { val l = 100l; val b = l == 100 }""")
       }
       "for char" - {
-        "compared to char-sized long literal" in {
-          verifyNoWarnings("""object A { val c = 'a'; val l = c == 97L }""")
-        }
-        "compared to char-sized int literal" in {
-          verifyNoWarnings("""object A { val c = 'a'; val l = c == 97 }""")
-        }
+        "compared to char-sized long literal" in
+        verifyNoWarnings("""object A { val c = 'a'; val l = c == 97L }""")
+        "compared to char-sized int literal" in
+        verifyNoWarnings("""object A { val c = 'a'; val l = c == 97 }""")
       }
       "for short" - {
-        "compared to Short.MaxValue as int literal" in {
-          verifyNoWarnings("""object A { val s = 1.toShort; val b = s == 32767 }""")
-        }
+        "compared to Short.MaxValue as int literal" in
+        verifyNoWarnings("""object A { val s = 1.toShort; val b = s == 32767 }""")
       }
       "for double" - {
         "compared to zero" in verifyNoWarnings("""object A { val d = 100d; val b = d == 0 }""")
@@ -113,9 +110,8 @@ class ComparingUnrelatedTypesTest extends InspectionTest {
               |}""".stripMargin
           )
         }
-        "bound variable if guard" in {
-          verifyNoWarnings("""object A { System.getProperty("x") match { case s if s == "y" => } }""")
-        }
+        "bound variable if guard" in
+        verifyNoWarnings("""object A { System.getProperty("x") match { case s if s == "y" => } }""")
       }
     }
   }

@@ -140,9 +140,8 @@ class UnusedMethodParameterTest extends InspectionTest {
     }
 
     "should handle constructor params" - {
-      "ignore unused case class primary param" in {
-        assertNoWarnings("""case class Foo(x: Int)""")
-      }
+      "ignore unused case class primary param" in
+      assertNoWarnings("""case class Foo(x: Int)""")
 
       "warn on unused case class secondary params" in {
         val code = """case class Foo(x: Int)(y: Int)"""
@@ -196,9 +195,8 @@ class UnusedMethodParameterTest extends InspectionTest {
                            |}""".stripMargin)
       }
 
-      "not warn on non-case class primary params marked val" in {
-        assertNoWarnings("""class Foo(val x: Int)""")
-      }
+      "not warn on non-case class primary params marked val" in
+      assertNoWarnings("""class Foo(val x: Int)""")
     }
   }
 

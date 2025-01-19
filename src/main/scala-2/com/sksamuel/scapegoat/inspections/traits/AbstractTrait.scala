@@ -3,12 +3,13 @@ package com.sksamuel.scapegoat.inspections.traits
 import com.sksamuel.scapegoat._
 
 class AbstractTrait
-  extends Inspection(
-    text = "Use of abstract trait",
-    defaultLevel = Levels.Info,
-    description = "Traits are automatically abstract.",
-    explanation = "The abstract modifier is used in class definitions. It is redundant for traits, and mandatory for all other classes which have incomplete members."
-  ){
+    extends Inspection(
+      text = "Use of abstract trait",
+      defaultLevel = Levels.Info,
+      description = "Traits are automatically abstract.",
+      explanation =
+        "The abstract modifier is used in class definitions. It is redundant for traits, and mandatory for all other classes which have incomplete members."
+    ) {
 
   override def inspector(ctx: InspectionContext): Inspector = {
     new Inspector(ctx) {
@@ -17,9 +18,8 @@ class AbstractTrait
 
           import context.global._
 
-          def isAbstractTrait(positions: Map[Long, Position]): Boolean = {
+          def isAbstractTrait(positions: Map[Long, Position]): Boolean =
             positions.contains(Flag.TRAIT) && positions.contains(Flag.ABSTRACT)
-          }
 
           override def inspect(tree: Tree): Unit = {
             tree match {
