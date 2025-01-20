@@ -54,7 +54,7 @@ jobs:
           restore-keys: sbt-
       - name: Generate coverage report
         run: sbt clean coverage test coverageReport
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
       - name: Run Scalafix check
         run: sbt fixCheck
       - name: Check formatting
